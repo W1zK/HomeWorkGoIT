@@ -1,34 +1,38 @@
 public class ShakerSort {
     static int[] pool = {4,8,10,-41,51,75,22,156,0,777};
 
-    public static void cocktailSort(int[] pool) {
+    private static void cocktailSort(int[] pool) {
         int size = pool.length;
         int x = size - 1;
-        int swap = 1;
+        boolean swap = true;
 
-        while (size > x && swap > 0){
-            swap = 0;
+        while (swap) {
+            swap = false;
 
-            for (int i = x; i > size - 1 -x; i--) //двигаемся справа налево
-                if (pool[i] < pool[i-1]) {      // если следующий элемент меньше текущего,меняем!
+            for (int i = x; i > size - 1 - x; i--) { //двигаемся справа налево
+                if (pool[i] < pool[i - 1]) {         // если следующий элемент меньше текущего,меняем!
                     // swap
                     int temp = pool[i];
-                    pool[i] = pool[i-1];
-                    pool[i-1] = temp;
-                    swap = 1;
+                    pool[i] = pool[i - 1];
+                    pool[i - 1] = temp;
+                    swap = true;
                 }
+            }
 
-            for (int i = size - x; i < x; i++) //двигаемся слева направо
-                if (pool[i] > pool[i+1]) {      // если текущий элемент больше следующего,меняем!
+
+            for (int i = size - x; i < x; i++) {  //двигаемся слева направо
+                if (pool[i] > pool[i + 1]) {      // если текущий элемент больше следующего,меняем!
                     // swap
                     int temp = pool[i];
-                    pool[i] = pool[i+1];
-                    pool[i+1] = temp;
-                    swap = 1;
+                    pool[i] = pool[i + 1];
+                    pool[i + 1] = temp;
+                    swap = true;
                 }
+            }
 
-            if (swap==0)
+            if (!swap){
                 break;
+            }
 
         }
 
