@@ -9,8 +9,8 @@ public class MainCalc {
         String x = "";
         while (value > 0) {
             a = value % system;
-            x = pool[a] + "" + x;
-            value = value / system;
+            x = pool[a] + x;
+            value /= system;
         }
         return x;
     }
