@@ -4,48 +4,48 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class NMEA {
-    static String GPGSV = "$GPGSV,5,3,12,02,52,128,20,01,48,240,30,03,33,054,29,14,27,314,25*47";
-    static String GLGSV = "$GLGSV,3,1,11,04,76,148,32,02,62,242,35,01,27,067,35,,,,*47";
-    static String GNGLL = "$GPGLL,4915.3920,N,12259.8072,W,222414.00,A*79";
-    static String GNRMC = "$GNRMC,165111.98,A,5601.0318,N,01211.3503,E,0.08,43.53,190706,,*3E";
-    static String GNVTG = "$GNVTG,30.60,T,,M,0.10,N,0.2,K,D*56";
-    static String GNGGA = "$GPGGA,165116.000,5601.0318,N,01211.3504,E,1,07,1.2,22.8,M,41.6,M,2,5438*6E";
-    static String GNGSA = "$GNGSA,M,3,17,02,30,04,05,10,09,06,31,12,,,1.2,0.8,0.9*2B";
-    static String[] subStr;
+    private static String GPGSV = "$GPGSV,5,3,12,02,52,128,20,01,48,240,30,03,33,054,29,14,27,314,25*47";
+    private static String GLGSV = "$GLGSV,3,1,11,04,76,148,32,02,62,242,35,01,27,067,35,,,,*47";
+    private static String GNGLL = "$GPGLL,4915.3920,N,12259.8072,W,222414.00,A*79";
+    private static String GNRMC = "$GNRMC,165111.98,A,5601.0318,N,01211.3503,E,0.08,43.53,190706,,*3E";
+    private static String GNVTG = "$GNVTG,30.60,T,,M,0.10,N,0.2,K,D*56";
+    private static String GNGGA = "$GPGGA,165116.000,5601.0318,N,01211.3504,E,1,07,1.2,22.8,M,41.6,M,2,5438*6E";
+    private static String GNGSA = "$GNGSA,M,3,17,02,30,04,05,10,09,06,31,12,,,1.2,0.8,0.9*2B";
+    private static String[] subStr;
 
-    static void circumcision(String name) {
+    private static void circumcision(String name) {
         String delimeter = ",";
         subStr = name.split(delimeter);
         subStr[0] = subStr[0].substring(1);
         subStr[subStr.length - 1] = subStr[subStr.length - 1].substring(0, subStr[subStr.length - 1].indexOf("*"));
     }
 
-    static String timeConvert(int index) {
+    private static String timeConvert(int index) {
         Date time = null;
         try {
             time = new SimpleDateFormat("HHmmss.SSS").parse(subStr[index]);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        String timeToString = new SimpleDateFormat("HH:mm:ss:SS").format(time);
-        return timeToString;
+        return new SimpleDateFormat("HH:mm:ss:SS").format(time);
+
     }
 
-    static String dateConvert(int index) {
+    private static String dateConvert(int index) {
         Date date = null;
         try {
             date = new SimpleDateFormat("ddMMyy").parse(subStr[index]);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        String dateToString = new SimpleDateFormat("dd/MM/yyyy").format(date);
-        return dateToString;
+        return new SimpleDateFormat("dd/MM/yyyy").format(date);
+
 
     }
 
-    static void gpgsvMethod() {
+    private static void gpgsvMethod(String gpsType) {
 
-        circumcision(GPGSV);
+        circumcision(gpsType);
 
         String type = subStr[0];
         int qMassage = subStr[1].equals("") ? 0 : Integer.valueOf(subStr[1]); //quantity massage
@@ -96,8 +96,8 @@ public class NMEA {
 
     }
 
-    static void glgsvMethod() {
-        circumcision(GLGSV);
+    private static void glgsvMethod(String gpsType) {
+        circumcision(gpsType);
 
         String type = subStr[0];
         int messQuant = subStr[1].equals("") ? 0 : Integer.valueOf(subStr[1]); //quantity massage
@@ -137,9 +137,9 @@ public class NMEA {
                 "\nSignal strength(int):" + snr2);
     }
 
-    static void gngllMethod() {
+    private static void gngllMethod(String gpsType) {
 
-        circumcision(GNGLL);
+        circumcision(gpsType);
 
         String type = subStr[0];
         double latitude = subStr[1].equals("") ? 0 : Double.valueOf(subStr[1]); //latitude
@@ -155,9 +155,9 @@ public class NMEA {
                 "\nValid data(char):" + dataType);
     }
 
-    static void gnrmcMethod() {
+    private static void gnrmcMethod(String gpsType) {
 
-        circumcision(GNRMC);
+        circumcision(gpsType);
 
         String type = subStr[0];
         char status = subStr[2].equals("") ? '-' : subStr[2].charAt(0);
@@ -181,9 +181,9 @@ public class NMEA {
                 "\nMode(char):" + mode);
     }
 
-    static void gnvtgMethod() {
+    private static void gnvtgMethod(String gpsType) {
 
-        circumcision(GNVTG);
+        circumcision(gpsType);
 
         String messType = subStr[0];
         double course1 = subStr[1].equals("") ? 0 : Double.valueOf(subStr[1]);
@@ -204,9 +204,9 @@ public class NMEA {
                 "\nMode(char):" + mode);
     }
 
-    static void gnggaMethod() {
+    private static void gnggaMethod(String gpsType) {
 
-        circumcision(GNGGA);
+        circumcision(gpsType);
 
         String messType = subStr[0];
         double lat = subStr[2].equals("") ? 0 : Double.valueOf(subStr[2]); //latitude
@@ -235,9 +235,9 @@ public class NMEA {
                 "\nDGPS Station ID(int):" + dgpsId);
     }
 
-    static void gngsaMethod() {
+    private static void gngsaMethod(String gpsType) {
 
-        circumcision(GNGSA);
+        circumcision(gpsType);
 
         String messType = subStr[0];
         char mode = subStr[1].equals("") ? '-' : subStr[1].charAt(0);
@@ -288,25 +288,25 @@ public class NMEA {
         x = sc.nextInt();
         switch (x) {
             case 1:
-                gpgsvMethod();
+                gpgsvMethod(GPGSV);
                 break;
             case 2:
-                glgsvMethod();
+                glgsvMethod(GLGSV);
                 break;
             case 3:
-                gngllMethod();
+                gngllMethod(GNGLL);
                 break;
             case 4:
-                gnrmcMethod();
+                gnrmcMethod(GNRMC);
                 break;
             case 5:
-                gnvtgMethod();
+                gnvtgMethod(GNVTG);
                 break;
             case 6:
-                gnggaMethod();
+                gnggaMethod(GNGGA);
                 break;
             case 7:
-                gngsaMethod();
+                gngsaMethod(GNGSA);
                 break;
 
             default:
