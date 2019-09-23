@@ -8,10 +8,11 @@ public class Fifth {
         int x = scanner.nextInt();
         recurs(x);
     }
-    static void recurs(int input){
+
+    private static void recurs(int input) {
         if (input != 1) {
             recurs(input - 1);
         }
         System.out.print(input + " ");
-        }
+    }
 }

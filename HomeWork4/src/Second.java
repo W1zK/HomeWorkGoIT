@@ -10,7 +10,7 @@ public class Second {
         drawRectangle(x, y);
     }
 
-    static void drawRectangle(int a, int b) {
+    private static void drawRectangle(int a, int b) {
 
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < b; j++) {

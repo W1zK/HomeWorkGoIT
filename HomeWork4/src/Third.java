@@ -14,7 +14,7 @@ public class Third {
 
     }
 
-    static void drawRectangle(int s) {
+    private static void drawRectangle(int s) {
         for (int i = 0; i < s; i++) {
             for (int j = 0; j < s; j++) {
                 System.out.print("+");
@@ -25,7 +25,7 @@ public class Third {
 
     }
 
-    static void drawRectangle(int a, int b) {
+    private static void drawRectangle(int a, int b) {
 
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < b; j++) {

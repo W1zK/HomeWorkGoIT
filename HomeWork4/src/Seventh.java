@@ -20,52 +20,49 @@ public class Seventh {
             switch (input) {
                 case 1:
                     First.main();
-                    repeet();
+                    repeat();
                     break;
                 case 2:
                     Second.main();
-                    repeet();
+                    repeat();
                     break;
                 case 3:
                     Third.main();
-                    repeet();
+                    repeat();
                     break;
                 case 4:
                     Fourth.main();
-                    repeet();
+                    repeat();
                     break;
                 case 5:
                     Fifth.main();
-                    repeet();
+                    repeat();
                     break;
                 case 6:
                     Sixth.main();
-                    repeet();
+                    repeat();
                     break;
                 default:
                     System.out.println("Вы ввели не верный номер задания, повторите ввод!");
-
-
             }
         }
     }
-    private static void repeet(){
+
+    private static void repeat() {
         String yes = "y";
         String no = "n";
         rerun = false;
-        System.out.println("\nПродолжить?"+
-                            "\n(y)YES или (n)NO");
+        System.out.println("\nПродолжить?" +
+                "\n(y)YES или (n)NO");
         String question = scanner.next();
-        if (question.equals (yes)) {
+        if (question.equals(yes)) {
             rerun = true;
         } else if (question.equals(no)) {
             System.out.println("Спасибо");
         } else {
             System.out.println("Вы ввели не допустимый символ, повторите ввод.");
-            repeet();
+            repeat();
         }
     }
-
-
 }
 
