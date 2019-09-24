@@ -1,12 +1,11 @@
 import java.util.Scanner;
 
 public class MainCalc {
-    static char[] pool = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-    static int userNumber;
-    static int a;
+    static final char[] pool = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     static String decimalConvert(int value, int system) {
         String x = "";
+        int a;
         while (value > 0) {
             a = value % system;
             x = pool[a] + x;
@@ -15,17 +14,17 @@ public class MainCalc {
         return x;
     }
 
-    static void show() {
-        System.out.print("Binary system:" + decimalConvert(userNumber, 2) + "\n"
-                        + "Octal system:" + decimalConvert(userNumber, 8) + "\n"
-                        + "Hex system:" + decimalConvert(userNumber, 16));
+    static void show(int userNumber) {
+        System.out.print("Binary system:\t" + decimalConvert(userNumber, 2) + "\n"
+                + "Octal system:\t" + decimalConvert(userNumber, 8) + "\n"
+                + "Hex system:\t\t" + decimalConvert(userNumber, 16));
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your number:");
-        userNumber = scanner.nextInt();
+        System.out.print("Enter the number: ");
+        int userNumber = scanner.nextInt();
 
-        show();
+        show(userNumber);
     }
 }
