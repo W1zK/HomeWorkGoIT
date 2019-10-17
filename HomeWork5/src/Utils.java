@@ -1,8 +1,4 @@
-package HomeWork5;
-
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 class Utils {
     private double average = 0; //midl distance
@@ -260,48 +256,7 @@ class Utils {
 
 
         }
-        show();
-
-    }
-
-    private void sTrapez(){
-
-    }
-
-    private void show() {
-//        cVector(point);
-//        sourcePoints(point);
-//        simbios(point, sourcePoint);
-//        length(pointArtil, allPoint);
-//        midlDistance(distance);
-//        crossLine(allPoint);
-//        farPoint(distance);
-//        farLine(pointArtil,allPoint);
-//        neareLineCross(allPoint);
-//        lineVsLine(clothLineMath,trapLine);
-//        pointOnSegment(crossLineVsLine,allPoint);
-//        creatValidePoint(sourceValideCross);
-        for (int i = 0; i < sourceValideCross.size(); i++) {
-            System.out.println("***********" + sourceValideCross.get(i).getX() + "--" + sourceValideCross.get(i).getY() + "***********");
-
-        }
-
-
-        System.out.println(crossLineVsLine.get(30).getX() + "==" + crossLineVsLine.get(30).getY());
-        System.out.println(crossLineVsLine.get(36).getX() + "==" + crossLineVsLine.get(36).getY());
-        System.out.println("++++++++" + (allPoint[7].getX() + "-" + (allPoint[7].getY() + "=======")));
-        System.out.println("++++++++" + (allPoint[8].getX() + "-" + (allPoint[8].getY() + "=======")));
-        System.out.println("++++++++" + (allPoint[9].getX() + "-" + (allPoint[9].getY() + "=======")));
-        System.out.println("++++++++" + (allPoint[10].getX() + "-" + (allPoint[10].getY() + "=======")));
-        System.out.println("++++++++" + (allPoint[11].getX() + "-" + (allPoint[11].getY() + "=======")));
-        System.out.println("++++++++" + (allPoint[12].getX() + "-" + (allPoint[12].getY() + "=======")));
-        System.out.println("++++++++" + (allPoint[13].getX() + "-" + (allPoint[13].getY() + "=======")));
-        System.out.println("*****************************************************");
-        for (int i = 0; i < cPoint.size(); i++) {
-            System.out.println("++++++++" + (allPoint[cPoint.get(i)].getX() + "-" + (allPoint[cPoint.get(i)].getY() + "=======")));
-
-        }
-
+        
 
     }
 }

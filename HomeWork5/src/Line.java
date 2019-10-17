@@ -1,5 +1,3 @@
-package HomeWork5;
-
 class Line {
     private double a;
     private double b;
