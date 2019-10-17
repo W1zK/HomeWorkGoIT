@@ -1,3 +1,5 @@
+package HomeWork5;
+
 class Segment {
 
     private double x;
