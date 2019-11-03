@@ -4,6 +4,8 @@ import Workers.HoursWorker;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -65,8 +67,8 @@ public class Utilities implements FilePath {
 
     private void loadCompany() {
         Company.getInstance().setFixedWorker(readFixed(new File(FIXED_WORKER)));
-        Company.getInstance().setNonFixWorker(readHoursWorker(new File(FilePath.NON_FIXED_WORKER)));
-        Company.getInstance().setFreelanceWorker(readFreelance(new File(FilePath.FREELANCE_WORKER)));
+        Company.getInstance().setNonFixWorker(readHoursWorker(new File(NON_FIXED_WORKER)));
+        Company.getInstance().setFreelanceWorker(readFreelance(new File(FREELANCE_WORKER)));
     }
 
 
@@ -136,9 +138,32 @@ public class Utilities implements FilePath {
     }
 
     private void saveCompany() {
-        saveFixed(company.getFixedRateEmployee(), new File(Files.FIXED_SALARY_EMPLOEE));
-        saveNonFixed(company.getNonFixRateEmployee(), new File(Files.NON_FIXED_SALARY_EMPLOEE));
-        saveFrilance(company.getFrilanceEmployee(), new File(Files.FRILANCE_SALARY_EMPLOEE));
+        fixWorkerSave(Company.getInstance().getFixedWorker(), new File(FIXED_WORKER));
+        hoursWorkerSave(Company.getInstance().getNonFixWorker(), new File(NON_FIXED_WORKER));
+        freelanceSave(Company.getInstance().getFreelanceWorker(), new File(FREELANCE_WORKER));
+    }
+    private void fixWorkerSave(FixWorker[] fixedRateEmployee, File path) {
+        creatFile(path);
+        try {
+            FileWriter writer = new FileWriter(path);
+            writer.flush();
+            writer.write(fixedRateEmployee.length + "\n");
+            for (FixWorker w : fixedRateEmployee) {
+                writer.write(w.getFirstName() + "," + w.getSecondName() + "," + w.getPayment() + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("Файл не записан!" + e.toString());
+        }
+    }
+
+
+    private void creatFile(File path) {
+        try {
+            path.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

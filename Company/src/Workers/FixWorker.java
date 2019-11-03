@@ -8,6 +8,10 @@ public class FixWorker extends Worker {
         this.payment = payment;
     }
 
+    public float getPayment() {
+        return payment;
+    }
+
     @Override
     public float payCalc() {
         return payment;
