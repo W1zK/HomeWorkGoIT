@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59541d2a-4022-4090-960f-9099a39312c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/FilePath.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/FilePath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Utilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Workers/FixWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Workers/FixWorker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Workers/Freelance.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Workers/Freelance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Workers/HoursWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Workers/HoursWorker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/src/FilePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/FilePath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/src/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/InfoServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/src/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/Utilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/src/Workers/Freelance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/Workers/Freelance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Company/src/Workers/HoursWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/Workers/HoursWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="286decf6-b5ff-4d8e-bfd1-c18fa48a1485" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,10 +13,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Store.java">
+        <entry file="file://$PROJECT_DIR$/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+            <state>
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,7 +26,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="310" />
@@ -44,7 +34,6 @@
     <option name="width" value="1700" />
     <option name="height" value="1046" />
   </component>
-  <component name="ProjectId" id="1T3Hy4ycOQ0gNSzN2L3uIjx6UZv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -52,30 +41,28 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Store" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Store" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Store" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Store" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../HomeWork5" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -95,43 +82,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Store" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="59541d2a-4022-4090-960f-9099a39312c8" name="Default Changelist" comment="" />
-      <created>1571927216171</created>
+      <changelist id="286decf6-b5ff-4d8e-bfd1-c18fa48a1485" name="Default Changelist" comment="" />
+      <created>1571986008296</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1571927216171</updated>
-      <workItem from="1571927221268" duration="240000" />
-      <workItem from="1572682110567" duration="606000" />
-      <workItem from="1572682737236" duration="19000" />
-      <workItem from="1572861869386" duration="1259000" />
+      <updated>1571986008296</updated>
+      <workItem from="1571986010509" duration="70000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1259000" />
+    <option name="totallyTimeSpent" value="70000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -166,44 +135,13 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Store.java">
+    <entry file="file://$PROJECT_DIR$/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

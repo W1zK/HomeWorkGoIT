@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9b1e035-59dc-4f4e-89d2-49b706ffa652" name="Default Changelist" comment="" />
+    <list default="true" id="c9b1e035-59dc-4f4e-89d2-49b706ffa652" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/FilePath.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/FilePath.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Utilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Workers/FixWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Workers/FixWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Workers/Freelance.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Workers/Freelance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/out/production/Company/Workers/HoursWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/out/production/Company/Workers/HoursWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/src/FilePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/FilePath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/src/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/InfoServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/src/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/src/Workers/Freelance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/Workers/Freelance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Company/src/Workers/HoursWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Company/src/Workers/HoursWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Store/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Store/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ShakerSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+            <state relative-caret-position="612">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="36" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -35,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1" />
     <option name="width" value="1922" />
     <option name="height" value="1046" />
@@ -48,7 +62,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -60,6 +73,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -123,17 +137,18 @@
       <updated>1568547756872</updated>
       <workItem from="1568547760898" duration="73000" />
       <workItem from="1568873732040" duration="317000" />
+      <workItem from="1572865339679" duration="862000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390000" />
+    <option name="totallyTimeSpent" value="1252000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25305623" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25611246" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -170,8 +185,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ShakerSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+        <state relative-caret-position="612">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="36" selection-end-column="9" />
         </state>
       </provider>
     </entry>

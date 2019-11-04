@@ -1,10 +1,10 @@
 import Workers.Worker;
 
-public class Services {
-    public static String infoWorkers(Worker[] employee) {
+public class InfoServices {
+    public static String infoWorkers(Worker[] workers) {
         String str = "";
         try {
-            for (Worker x : employee) {
+            for (Worker x : workers) {
                 str += x.toString() + "\n";
             }
             return str;
@@ -13,13 +13,13 @@ public class Services {
         }
         return null;
     }
-    public static float paymentCalc(Worker[] employee) {
-        float expenses = 0;
+    public static float paymentCalc(Worker[] workers) {
+        float exp = 0;
         try {
-            for (Worker x : employee) {
-                expenses += x.payCalc();
+            for (Worker x : workers) {
+                exp += x.payCalc();
             }
-            return expenses;
+            return exp;
         } catch (NullPointerException e) {
             System.out.println(e.fillInStackTrace());
         }
