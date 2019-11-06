@@ -36,7 +36,6 @@ public interface Search {
     }
     default void search(Vagetables[] mass) {
         System.out.println("Enter the name");
-        scanner.next();
         String nm = scanner.nextLine();
         for (int i = 0; i < mass.length-1; i++) {
             if (mass[i].getName().contains(nm)) {
