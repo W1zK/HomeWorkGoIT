@@ -1,28 +1,20 @@
 import Workers.Worker;
 
-public class InfoServices {
-    public static String infoWorkers(Worker[] workers) {
+public interface InfoServices {
+
+    default String infoWorkers(Worker[] workers) {
         String str = "";
-        try {
-            for (Worker x : workers) {
-                str += x.toString() + "\n";
-            }
-            return str;
-        } catch (NullPointerException e) {
-            System.out.println(e.fillInStackTrace());
+        for (Worker x : workers) {
+            str += x.toString() + "\n";
         }
-        return null;
+        return str;
     }
-    public static float paymentCalc(Worker[] workers) {
+
+    default float paymentCalc(Worker[] workers) {
         float exp = 0;
-        try {
-            for (Worker x : workers) {
-                exp += x.payCalc();
-            }
-            return exp;
-        } catch (NullPointerException e) {
-            System.out.println(e.fillInStackTrace());
+        for (Worker x : workers) {
+            exp += x.payCalc();
         }
-        return 0;
+        return exp;
     }
 }

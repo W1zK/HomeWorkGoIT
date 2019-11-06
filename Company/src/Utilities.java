@@ -3,26 +3,21 @@ import Workers.Freelance;
 import Workers.HoursWorker;
 import Workers.Worker;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Utilities implements FilePath {
+
+public class Utilities implements FilePath, InfoServices, FileHandler {
+    {
+        loadCompany();
+    }
+
     Scanner scan = new Scanner(System.in);
 
 
     void run() {
         doIt();
-    }
-
-    void loadCompany() {
-        Company.getInstance().setFixedWorker(readFixed(new File(FIXED_WORKER)));
-        Company.getInstance().setNonFixWorker(readHoursWorker(new File(NON_FIXED_WORKER)));
-        Company.getInstance().setFreelanceWorker(readFreelance(new File(FREELANCE_WORKER)));
     }
 
     private void doIt() {
@@ -63,7 +58,6 @@ public class Utilities implements FilePath {
 
     }
 
-
     private void addWorker() {
         System.out.println("\n 1 - Рабочий с фиксированой З/П" +
                 "\n 2 - Рабочий с почасовой З/П" +
@@ -94,9 +88,7 @@ public class Utilities implements FilePath {
         }
     }
 
-
     private void addHoursWorker() {
-        HoursWorker[] tmp = Arrays.copyOf(Company.getInstance().getNonFixWorker(), Company.getInstance().getNonFixWorker().length + 1);
         scan.nextLine();
         System.out.println("Введите имя сотрудника: ");
         String firstName = scan.nextLine();
@@ -108,6 +100,7 @@ public class Utilities implements FilePath {
         float time = scan.nextFloat();
         System.out.println("Введите цену часа: ");
         float timePrice = scan.nextFloat();
+        HoursWorker[] tmp = Arrays.copyOf(Company.getInstance().getNonFixWorker(), Company.getInstance().getNonFixWorker().length + 1);
         tmp[tmp.length - 1] = new HoursWorker(firstName, secondName, day, time, timePrice);
         Company.getInstance().setNonFixWorker(tmp);
     }
@@ -141,152 +134,18 @@ public class Utilities implements FilePath {
 
     }
 
-
-    private FixWorker[] readFixed(File path) {
-        FixWorker[] fromFile = null;
-        if (path.exists()) {
-            try {
-                Scanner scan = new Scanner(path);
-                int length = scan.hasNextInt() ? scan.nextInt() : 0;
-                String[] employee;
-                if (length != 0) {
-                    fromFile = new FixWorker[length];
-                    for (int i = 0; i < length; i++) {
-                        employee = scan.next().split(",");
-
-                        fromFile[i] = new FixWorker(employee[0], employee[1], Float.parseFloat(employee[2]));
-                    }
-                }
-            } catch (FileNotFoundException | NumberFormatException e) {
-                System.out.println("File not found. " + e.fillInStackTrace());
-                return new FixWorker[0];
-            }
-        }
-        return fromFile;
-    }
-
-    private HoursWorker[] readHoursWorker(File path) {
-        HoursWorker[] fromFile = null;
-        if (path.exists()) {
-            try {
-                Scanner scan = new Scanner(path);
-                int length = scan.hasNextInt() ? scan.nextInt() : 0;
-                String[] employee;
-                if (length != 0) {
-                    fromFile = new HoursWorker[length];
-                    for (int i = 0; i < length; i++) {
-                        employee = scan.next().split(",");
-                        fromFile[i] = new HoursWorker(employee[0], employee[1], Float.parseFloat(employee[2]), Float.parseFloat(employee[3]), Float.parseFloat(employee[4]));
-                    }
-                }
-            } catch (FileNotFoundException | NumberFormatException e) {
-                System.out.println("File not found. " + e.fillInStackTrace());
-                return new HoursWorker[0];
-            }
-        }
-        return fromFile;
-    }
-
-    private Freelance[] readFreelance(File path) {
-        Freelance[] fromFile = null;
-        if (path.exists()) {
-            try {
-                Scanner scan = new Scanner(path);
-                int length = scan.hasNextInt() ? scan.nextInt() : 0;
-                String[] employee;
-                if (length != 0) {
-                    fromFile = new Freelance[length];
-                    for (int i = 0; i < length; i++) {
-                        employee = scan.next().split(",");
-                        fromFile[i] = new Freelance(employee[0], employee[1], Float.parseFloat(employee[2]), Float.parseFloat(employee[3]));
-                    }
-                }
-            } catch (FileNotFoundException | NumberFormatException e) {
-                System.out.println("File not found. " + e.fillInStackTrace());
-                return new Freelance[0];
-            }
-        }
-        return fromFile;
-    }
-
-    private void saveCompanyInFile() {
-        fixWorkerSave(Company.getInstance().getFixedWorker(), new File(FIXED_WORKER));
-        hoursWorkerSave(Company.getInstance().getNonFixWorker(), new File(NON_FIXED_WORKER));
-        freelanceSave(Company.getInstance().getFreelanceWorker(), new File(FREELANCE_WORKER));
-    }
-
-
-    private void fixWorkerSave(FixWorker[] fixWorkers, File path) {
-        creatFile(path);
-        try {
-            FileWriter writer = new FileWriter(path);
-            writer.flush();
-            writer.write(fixWorkers.length + "\n");
-            for (FixWorker w : fixWorkers) {
-                writer.write(w.getFirstName() + "," + w.getSecondName() + "," + w.getPayment() + "\n");
-            }
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("Файл не записан!" + e.toString());
-        }
-    }
-
-    private void hoursWorkerSave(HoursWorker[] hoursWorkers, File path) {
-        creatFile(path);
-        try {
-            FileWriter writer = new FileWriter(path);
-            writer.flush();
-            writer.write(hoursWorkers.length + "\n");
-            for (HoursWorker h : hoursWorkers) {
-                writer.write(h.getFirstName() + "," + h.getSecondName() + "," + h.getHours() + ","
-                        + h.getDays() + "," + h.getPrice() + "\n");
-            }
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("Файл не записан!" + e.toString());
-        }
-    }
-
-    private void freelanceSave(Freelance[] freelance, File path) {
-        creatFile(path);
-        try {
-            FileWriter writer = new FileWriter(path);
-            writer.flush();
-            writer.write(freelance.length + "\n");
-            for (Freelance f : freelance) {
-                writer.write(f.getFirstName() + "," + f.getSecondName() + "," + f.getHours() + ","
-                        + f.getPrice() + "\n");
-            }
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("Error: file hasn't been written!" + e.toString());
-        }
-    }
-
-
-    private void creatFile(File path) {
-        try {
-            path.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     private void showInfo() {
-        System.out.println(InfoServices.infoWorkers(Company.getInstance().getFixedWorker()));
-        System.out.println(InfoServices.infoWorkers(Company.getInstance().getNonFixWorker()));
-        System.out.println(InfoServices.infoWorkers(Company.getInstance().getFreelanceWorker()));
+        System.out.println(infoWorkers(Company.getInstance().getFixedWorker()));
+        System.out.println(infoWorkers(Company.getInstance().getNonFixWorker()));
+        System.out.println(infoWorkers(Company.getInstance().getFreelanceWorker()));
 
     }
 
     private String payment() {
-        float pay = InfoServices.paymentCalc(Company.getInstance().getFixedWorker()) +
-                InfoServices.paymentCalc(Company.getInstance().getNonFixWorker()) +
-                InfoServices.paymentCalc(Company.getInstance().getFreelanceWorker());
-
-
+        float pay = paymentCalc(Company.getInstance().getFixedWorker()) +
+                paymentCalc(Company.getInstance().getNonFixWorker()) +
+                paymentCalc(Company.getInstance().getFreelanceWorker());
         return "Затраты на зарплаты " + pay + " $";
-
     }
 
     private void repeet() {
@@ -364,33 +223,11 @@ public class Utilities implements FilePath {
 
             }
         } else {
-            for (int i = allWorker.length - 1; i >=0; i--) {
+            for (int i = allWorker.length - 1; i >= 0; i--) {
                 System.out.println(allWorker[i].toString());
 
             }
         }
-
-
-
-
-        /*Worker tmp;
-        for (int i = 0; i < allWorker.length - 1; i++) {
-            for (int j = i; j < allWorker.length - (i + 1); j++) {
-                if (allWorker[j].payCalc() > allWorker[j + 1].payCalc()) {
-                    tmp = allWorker[j];
-                    allWorker[j] = allWorker[j + 1];
-                    allWorker[j + 1] = tmp;
-                }
-            }
-
-            for (int j = all.length - (i + 2); j > i; j--) {
-                if (all[j - 1].salaryCalc() > all[j].salaryCalc()) {
-                    tmp = all[j];
-                    all[j] = all[j - 1];
-                    all[j - 1] = tmp;
-                }
-            }
-        }*/
 
 
     }

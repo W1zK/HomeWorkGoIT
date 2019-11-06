@@ -24,7 +24,7 @@ public class HoursWorker extends Worker {
         this.hours = hours;
         this.days = days;
         this.price = price;
-        this.payment = days*hours*price;
+        this.payment = days * hours * price;
     }
 
     public float getHours() {
